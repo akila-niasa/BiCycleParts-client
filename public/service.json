@@ -1,0 +1,75 @@
+[
+    {
+     
+      "name": "Axle",
+      "minimumOrder": 50,
+      "availableQuantity": 500,
+      "price":12000,
+      "image": "https://i.ibb.co/NmdV2rr/axle.jpg",
+      "details": "as in the generic definition, a rod that serves to attach a wheel to a bicycle and provides support for bearings on which the wheel rotates"
+    },
+    {
+      "name": "Handlebar",
+      "minimumOrder": 50,
+      "availableQuantity": 500,
+      "price":12000,
+      "image": "https://i.ibb.co/wCwxzLP/bar-ends.jpg",
+      "details": "A bicycle handlebar is the steering control for bicycles. It is the equivalent of a tiller for vehicles and vessels, as it is most often directly mechanically linked to a pivoting front wheel via a stem which in turn attaches it to the fork. Besides steering, handlebars also often support a portion of the"
+    },
+    {
+      "name": "Bearing ",
+      "minimumOrder": 50,
+      "availableQuantity": 500,
+      "price":12000,
+      "image": "https://i.ibb.co/SKTRtR3/Bearing2.jpg",
+      "details": "A bearing is a machine element that constrains relative motion to only the desired motion, and reduces friction between moving parts. The design of the bearing may, for example, provide for free linear movement of the moving part or for free rotation around a fixed axis; or, it may prevent a motion by controlling the vectors of normal forces that bear on the moving parts."
+    },
+    {
+      "name": "Belt-driven ",
+      "minimumOrder": 50,
+      "availableQuantity": 500,
+      "price":12000,
+      "image": "https://i.ibb.co/vc8XvF9/belt-drive-2.jpg",
+      "details": "A belt-driven bicycle is a chainless bicycle that uses a toothed synchronous belt to transmit power from the pedals to the wheel."
+    },
+    {
+      "name": "Brake",
+      "minimumOrder": 50,
+      "availableQuantity": 600,
+      "price":12000,
+      "image": "https://i.ibb.co/JHWqXTX/brake.jpg",
+      "details": "A bicycle brake reduces the speed of a bicycle or prevents it from moving. The three main types are: rim brakes, disc brakes, and drum brakes."
+    },
+    {
+      "name": "Chaintugs",
+      "minimumOrder": 30,
+      "availableQuantity": 600,
+      "price":12000,
+      "image": "https://i.ibb.co/5T0h93b/chaintug.jpg",
+      "details": "A fork end, fork-end, or forkend is a slot in a bicycle frame or bicycle fork where the axle of a bicycle wheel is attached. A dropout is a type of fork end that allows the rear wheel to be removed without first derailing the chain."
+    },
+    {
+      "name": "Inner tube",
+      "minimumOrder": 30,
+      "availableQuantity": 500,
+      "price":12000,
+      "image": "https://i.ibb.co/94GpXDg/innertube.jpg",
+      "details": "An inner tube is an inflatable ring that forms the interior of some pneumatic tires. The tube is inflated with a valve stem, and fits inside of the casing of the tire. The inflated inner tube provides structural support and suspension, while the outer tire provides grip and protects the more fragile tube. They are widely used in bicycles and are also used in many."
+    },
+    {
+      "name": "Pedal",
+      "minimumOrder": 30,
+      "availableQuantity": 700,
+      "price":12000,
+      "image": "https://i.ibb.co/MSvLZkw/pedal.jpg",
+      "details": "The pedal is the part of a bicycle that the rider pushes with their foot to propel the vehicle. It provides the connection between the cyclist's foot or shoe and the crank allowing the leg to turn the bottom bracket spindle and propel the bicycle's wheels. A pedal usually consists of a spindle that threads into the end of the crank."
+    },
+    {
+      "name": "Seatpost",
+      "minimumOrder": 20,
+      "availableQuantity": 700,
+      "price":12000,
+      "image": "https://i.ibb.co/VWmBsym/seat.jpg",
+      "details": "A bicycle seatpost, seatpin, saddlepole, saddle pillar, or saddle pin is a tube that extends upwards from the bicycle frame to the saddle. The amount that it extends out of the frame can usually be adjusted, and there is usually a mark that indicates the minimum insertion. Seatposts can be made of steel, aluminum, titanium, carbon fiber."
+    }
+  ]

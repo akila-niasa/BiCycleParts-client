@@ -4,7 +4,7 @@ import { AiOutlineDesktop,AiOutlineUsergroupAdd } from "react-icons/ai";
 const BusinessSummary = () => {
     return (
        <div>
-            <h3 className=' text-3xl text-center m-3'><span className='text-secondary font-bold'>Million Business </span> Trust Us</h3>
+            <h3 className=' text-3xl text-center m-3 font-serif'><span className='text-secondary font-bold'>Million Business </span> Trust Us</h3>
             <div className='bg-success p-5'>
            
             <h5 className='text-white text-xl text-center m-3'>We try to Understand what People's need</h5>

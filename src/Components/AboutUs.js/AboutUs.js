@@ -5,13 +5,13 @@ import { HiOutlineTable,HiOutlineUserCircle } from "react-icons/hi";
 const AboutUs = () => {
     return (
         <div>
-            <h3 className='text-3xl text-center font-bold m-5'><span className='text-secondary'>About</span> Us</h3>
+            <h3 className='text-3xl text-center font-bold font-serif m-5'><span className='text-secondary'>About</span> Us</h3>
             <div class="hero min-h-screen bg-neutral">
                 <div class="hero-content flex-col lg:flex-row">
                     <img src="https://www.ecerimg.com/nimg/04/a5/d74152a9c748eb07a1e0d85b3112-350x250-1/baoji_quality_metals_co_ltd.jpg" class="w-full rounded-lg shadow-2xl" />
                     <div>
                         <p class=" text-right text-white">BiCycle Parts from Quality China Factory.
-                            It is located in Boji China, which is engaged in the production of machining products, titanium sputtering target, and some metal material machining. Our company has strong technical force, advanced and sophisticated equipment, mature production technology a... <button className='text-secondary text-decoration none'>read more</button> </p>
+                            It is located in Boji China, which is engaged in the production of machining products and some metal material machining. Our company has strong technical force, advanced and sophisticated equipment, mature production technology a... <button className='text-secondary text-decoration none'>read more</button> </p>
                         {/* <button class="btn btn-primary">Get Started</button> */}
                         <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-4'>
                             <div class="card  bg- neutral shadow-xl">

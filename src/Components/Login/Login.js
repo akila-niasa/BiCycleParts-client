@@ -101,8 +101,7 @@ const Login = () => {
                 </form>
                 <p><small>New to BiCycle store <Link className='text-secondary' to="/signup">Create New Account</Link></small></p>
                 <div className="divider text-secondary">OR</div>
-                <button
-                 
+                <button onClick={()=>signInWithGoogle()}
                     className="btn btn-outline"
                 >Continue with Google</button>
                 </div>
