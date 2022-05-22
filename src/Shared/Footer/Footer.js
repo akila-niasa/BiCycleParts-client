@@ -11,12 +11,11 @@ const Footer = () => {
               <p className='small  mt-4'>
                 It is an online  shop where you can find parts of bicycle.
               </p>
-              <p className='small text-muted mb-0'>
-                &copy; Copyrights. All rights reserved.{" "}
-                <Link className='text-secondary' to='/'>
-                  BiCycle.com
-                </Link>
-              </p>
+            <div>
+            <h3 className='text-secondary '>Follow Us</h3>
+            <a href='https://github.com/akila-niasa?tab=repositories'><img className='w-3.5 h-3.5 m-3' src="https://www.shareicon.net/data/256x256/2015/08/11/83538_facebook_512x512.png" alt="" /></a>
+        <a href='https://github.com/akila-niasa?tab=repositories'><img className='w-3.5 h-3.5 m-3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPbmlO8vg3r4q4Ule3u4XvSKLXZP4mNjE4Uw&usqp=CAU" alt="" /></a>
+            </div>
             </div>
             <div className='p-10'>
               <h5 className='text-white mb-3 footer-title'>Quick links</h5>
@@ -50,7 +49,12 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-    
+          <p className='small text-white text-center mb-0'>
+                &copy; Copyrights. All rights reserved.{" "}
+                <Link className='text-secondary' to='/'>
+                  BiCycle.com
+                </Link>
+              </p>
       </footer>
     );
 };

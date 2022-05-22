@@ -4,11 +4,11 @@ import './Banner.css'
 const Banner = () => {
     return (
         <div className=' banner  p-52'>
-            <div className=' '>
+            <div className='mt-8 '>
             <h1 className='text-white text-5xl text-left'>
-              <span className='bg-black'>
+              <span >
                 Shop Your{' '} 
-                <span className='text-left text-secondary'>Product</span> From Us
+                <span className='text-left text-secondary indent-8'>Product From Us</span> To Your Bicycle
               </span>
             </h1>
             <h5 className='text-white text-left p-5'>
