@@ -12,7 +12,8 @@ const CheckoutFrom = ({order}) => {
     const [processing, setProcessing] = useState(false);
     const [clientSecret, setClientSecret] = useState('');
 
-    const{_id,product,price,client,clientName}=order
+    const{_id,product,price,client,clientName}=order;
+
     useEffect(() => {
         fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
@@ -79,7 +80,19 @@ const CheckoutFrom = ({order}) => {
         order: _id,
         transactionId: paymentIntent.id
     }
-   
+    fetch(`http://localhost:5000/order/${_id}`,{
+        method: 'PATCH',
+        headers: {
+            'content-type': 'application/json',
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        },
+        body: JSON.stringify(payment)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        setProcessing(false);
+        console.log(data);
+    })
    }
     }
     return (
