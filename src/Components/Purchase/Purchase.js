@@ -22,7 +22,7 @@ const Purchase = () => {
             product:product.name,
             
             quantity,
-            price:product.price,
+            price:product.price*quantity,
              client: user.email,
             clientName: user.displayName,
             phone: event.target.phone.value

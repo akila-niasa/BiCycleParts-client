@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle} from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading/Loading';
 import toast from 'react-hot-toast';
+import useTooken from '../../hooks/useToken';
 
 
 const Login = () => {
@@ -21,14 +22,16 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+
+      const[token]=useTooken(user||guser)
    
     useEffect(()=>{
-        if(user||guser){
+        if(token){
             navigate(from, { replace: true });
           
          
         }
-    },[user,guser,from,navigate])
+    },[token,from,navigate])
     if(loading||gloading){
         return <Loading/>
     }
