@@ -21,7 +21,8 @@ const ProductCard = ({product}) => {
     <h3 class="card-title">Available Quantity:<span className='text-secondary'>{availableQuantity}</span></h3>
     
     <p>{details}</p>
-    <div class="card-actions">
+    
+    <div class="card-actions" >
     <Link to={`/purchase/${_id}`}>
                         <button className='btn-banner'>Go to Purchase</button>
                     </Link>
