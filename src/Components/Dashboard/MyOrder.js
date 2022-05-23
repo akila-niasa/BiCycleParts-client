@@ -18,6 +18,22 @@ const MyOrder = () => {
             })
         }
     },[user])
+    const orderDelete=id=>{
+        const processed = window.confirm("Do you want to delete the product?")
+        if(processed){
+            fetch(`http://localhost:5000/deleteorder/${id}`,{
+                method:"DELETE"
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                if(data.deletedCount>0){
+                    const remainOrder=myOrders.filter(order=>order._id!==id)
+                    setMyOrders(remainOrder)
+                  }
+            })
+        }
+    }
 
     return (
         <div>
@@ -52,6 +68,7 @@ const MyOrder = () => {
                   <td>
                     <span
                       style={{ fontSize: "24px" }}
+                      onClick={() => orderDelete(order._id)}
                     >
                       <MdDelete />
                     </span>
