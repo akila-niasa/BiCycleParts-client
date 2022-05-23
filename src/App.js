@@ -16,6 +16,7 @@ import AddReview from './Components/Dashboard/AddReview';
 
 import MyProfile from './Components/Dashboard/MyProfile';
 import Blogs from './Components/Blogs/Blogs';
+import Payment from './Components/Dashboard/Payment';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
          <Route index element={<MyOrder/>}/>
          <Route path='addreview' element={<AddReview/>}/>
          <Route path='myprofile' element={<MyProfile/>}/>
+         <Route path="payment/:id" element={<Payment/>}></Route>
        </Route>
 
        <Route path='login' element={<Login/>}/>
