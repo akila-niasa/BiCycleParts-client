@@ -1,16 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle} from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle} from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading/Loading';
+import toast from 'react-hot-toast';
+
 
 const Login = () => {
-    const navigate=useNavigate()
+    const navigate=useNavigate();
     let location = useLocation();
+    
     let from = location.state?.from?.pathname || "/";
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
+    
     const [
         signInWithEmailAndPassword,
         user,
@@ -28,13 +32,18 @@ const Login = () => {
     if(loading||gloading){
         return <Loading/>
     }
+   
+
     let logInError
     if(error || gerror){
         logInError= <p className='text-red-500'><small>{error?.message || gerror?.message }</small></p>
     }
     const onSubmit=data=>{
         signInWithEmailAndPassword(data.email,data.password);
+        
     }
+
+   
     return (
         <div>
         <div className='flex h-screen justify-center items-center mt-5'>
@@ -47,6 +56,7 @@ const Login = () => {
                             <span className="label-text">Email</span>
                         </label>
                         <input
+                      
                             type="email"
                             placeholder="Your Email" className="input input-bordered w-full max-w-xs"
                             {...register("email", {
@@ -95,14 +105,15 @@ const Login = () => {
                         
                     </div>
                     {logInError}
-                    <input className='btn btn-accent p-6 w-full max-w-xs text-white' type="submit" value="Login" />
+                    <input className='btn btn-banner p-6 w-full max-w-xs text-white' type="submit" value="Login" />
 
                    
                 </form>
-                <p><small>New to BiCycle store <Link className='text-secondary' to="/signup">Create New Account</Link></small></p>
+               
+                <p><small>New to BiCycle store <Link className='text-secondary' to="/signup"> Create New Account</Link></small></p>
                 <div className="divider text-secondary">OR</div>
                 <button onClick={()=>signInWithGoogle()}
-                    className="btn btn-outline"
+                    className="btn-banner btn-outline"
                 >Continue with Google</button>
                 </div>
                 </div>

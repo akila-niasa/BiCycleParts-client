@@ -34,7 +34,7 @@ const Register = () => {
      }
     return (
         <div>
-        <div className='flex h-screen justify-center items-center mt-12'>
+        <div className='flex h-screen justify-center items-center mt-28'>
         <div className="card w-96 bg-base-100 shadow-xl">
             <div className="card-body">
                 <h2 className="text-center text-2xl font-bold"><span className='text-secondary'>Please </span> Register</h2>
@@ -117,14 +117,14 @@ const Register = () => {
                         </label>
                     </div>
                     {RegisterError}
-                    <input className='btn btn-accent p-6 w-full max-w-xs text-white' type="submit" value="Sign Up" />
+                    <input className='btn btn-banner p-6 w-full max-w-xs text-white' type="submit" value="Sign Up" />
 
                 </form>
-                <p><small>Already have an account? <Link className='text-primary' to="/login">Please Login</Link></small></p>
+                <p><small>Already have an account? <Link className='text-secondary' to="/login">Please Login</Link></small></p>
                 <div className="divider">OR</div>
                 <button
                   onClick={()=>signInWithGoogle()}
-                    className="btn btn-outline"
+                    className="btn-banner btn-outline"
                 >Continue with Google</button>
                 </div>
                 </div>
