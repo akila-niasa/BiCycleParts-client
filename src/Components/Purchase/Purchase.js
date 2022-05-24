@@ -53,7 +53,7 @@ const Purchase = () => {
     },[id])
     return (
         <div>
-            <h3 className='fond bold text-2xl text-center'>PurChase <span className='text-secondary'>Your Product</span></h3>
+            <h3 className='fond bold text-2xl text-center m-5'>PurChase <span className='text-secondary'>Your Product</span></h3>
             <div class="hero min-h-screen ">
            
   <div class="hero-content flex-col lg:flex-row-reverse">

@@ -12,11 +12,10 @@ import { Toaster } from 'react-hot-toast';
 import Dashboard from './Components/Dashboard/Dashboard';
 import MyOrder from './Components/Dashboard/MyOrder';
 import AddReview from './Components/Dashboard/AddReview';
-
-
 import MyProfile from './Components/Dashboard/MyProfile';
 import Blogs from './Components/Blogs/Blogs';
 import Payment from './Components/Dashboard/Payment';
+import NotFound from './Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -36,10 +35,13 @@ function App() {
          <Route path='addreview' element={<AddReview/>}/>
          <Route path='myprofile' element={<MyProfile/>}/>
          <Route path="payment/:id" element={<Payment/>}></Route>
+         
        </Route>
 
        <Route path='login' element={<Login/>}/>
        <Route path='signup' element={<Register/>}/>
+       <Route path='*' element={<NotFound/>}/>
+
      </Routes>
     </div>
   );

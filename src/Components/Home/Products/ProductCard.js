@@ -6,12 +6,16 @@ const ProductCard = ({product}) => {
     product;
     return (
         <div>
-            <div class="card w-96 bg-base-100 shadow-xl">
-  <figure class=" pt-10">
+            <div class="card w-96 bg-base-100 shadow-xl" style={{
+           
+           borderRadius: "15px 15px 0px 0px",
+           border: "2px solid rgb(236, 54, 109)",
+         }}>
+  <figure class=" pt-10" >
     <img  style={{
             height: "200px",
             borderRadius: "15px 15px 0px 0px",
-            border: "2px solid rgb(236, 54, 109)",
+           
           }} src={image} alt="" className='w-full' />
   </figure>
   <div class="card-body items-center text-center">
