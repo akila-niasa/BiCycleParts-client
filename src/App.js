@@ -21,6 +21,7 @@ import ManageProduct from './Components/Dashboard/ManageProduct';
 import ManageAllOrder from './Components/Dashboard/ManageAllOrder';
 import AddProduct from './Components/Dashboard/AddProduct';
 import RequireAdmin from './Components/Login/RequireAdmin'
+import MyPortfolio from './Components/MyPortfolio';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
      <Routes>
        <Route path='/' element={<Home/>}/>
        <Route path='blogs' element={<Blogs/>}/>
+       <Route path='myportfolio' element={<MyPortfolio/>}/>
        <Route path='purchase/:id' element={<RequireAuth>
          <Purchase/>
        </RequireAuth>}/>

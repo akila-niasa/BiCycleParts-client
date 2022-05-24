@@ -14,6 +14,7 @@ const Navbar = () => {
     <li className='text-white'><Link to="/">Home</Link></li>
   
     <li className='text-white'><Link to="/blogs">Blogs</Link></li>
+    <li className='text-white'><Link to="/myportfolio">My Portfolio</Link></li>
     {
       user && <li className='text-white'><Link to="/dashboard">DashBoard</Link></li>
     }

@@ -34,7 +34,7 @@ const[admin]=useAdmin(user)
       admin && <>
         <li><Link to="/dashboard/makeadmin">Make Admin</Link></li>
       <li><Link to="/dashboard/manageproduct">Manage Product</Link></li>
-      <li><Link to="/dashboard/manageallorder">Manage All Order</Link></li>
+      <li><Link to="/dashboard/allorder">Manage All Order</Link></li>
       <li><Link to="/dashboard/addproduct">Add Product</Link></li>
       </>
     }
