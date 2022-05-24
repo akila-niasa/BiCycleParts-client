@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 
 const Dashboard = () => {
 const[user]=useAuthState(auth)
+
     return (
         <div>
             <div class="drawer drawer-mobile">
@@ -27,6 +28,11 @@ const[user]=useAuthState(auth)
         </>
       }
       <li><Link to="/dashboard/myprofile">My Profile</Link></li>
+
+      <li><Link to="/dashboard/makeadmin">Make Admin</Link></li>
+      <li><Link to="/dashboard/manageproduct">Manage Product</Link></li>
+      <li><Link to="/dashboard/manageallorder">Manage All Order</Link></li>
+      <li><Link to="/dashboard/addproduct">Add Product</Link></li>
     </ul>
   
   </div>
