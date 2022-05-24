@@ -18,7 +18,7 @@ if (isLoading) {
 }
     return (
         <div>
-        <h2 className='text-2xl'>All Users:{users?.length}</h2>
+        <h3 className='text-xl'>All Users: <span className='text-secondary'>{users?.length}</span></h3>
         <div class="overflow-x-auto">
             <table class="table w-full">
                 <thead>
