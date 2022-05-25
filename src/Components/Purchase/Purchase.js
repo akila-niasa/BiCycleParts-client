@@ -20,12 +20,13 @@ const Purchase = () => {
         const oreder={
             productId:product._id,
             product:product.name,
-            
             quantity,
+            
             price:product.price*quantity,
              client: user.email,
             clientName: user.displayName,
-            phone: event.target.phone.value
+            phone: event.target.phone.value,
+            status: "pending",
         }
         fetch('http://localhost:5000/saveorder',{
             method:'POST',

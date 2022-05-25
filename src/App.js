@@ -22,6 +22,7 @@ import ManageAllOrder from './Components/Dashboard/ManageAllOrder';
 import AddProduct from './Components/Dashboard/AddProduct';
 import RequireAdmin from './Components/Login/RequireAdmin'
 import MyPortfolio from './Components/MyPortfolio';
+import StatusUpdate from './Components/Dashboard/StatusUpdate';
 
 function App() {
   return (
@@ -53,6 +54,9 @@ function App() {
          </RequireAdmin>}/>
          <Route path='addproduct' element={<RequireAdmin>
           <AddProduct/>
+         </RequireAdmin>}/>
+         <Route path='status' element={<RequireAdmin>
+          <StatusUpdate/>
          </RequireAdmin>}/>
        </Route>
 
