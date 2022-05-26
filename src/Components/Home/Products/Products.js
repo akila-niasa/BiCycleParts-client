@@ -9,9 +9,9 @@ const Products = () => {
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[])
-    if(!products){
-        return <Loading/>
-    }
+    if (products.length === 0) {
+        return <Loading></Loading>;
+      }
     return (
         <div className='p-5'>
             <h3 className='font-bold font-serif text-3xl text-center m-5'><span className='text-secondary'>Featured</span> Parts</h3>

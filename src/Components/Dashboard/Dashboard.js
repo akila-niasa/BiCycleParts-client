@@ -24,7 +24,7 @@ const[admin]=useAdmin(user)
       {/* <!-- Sidebar content here --> */}
       {
        ( user&& !admin) && <>
-        <li><Link to="/dashboard">My Orders </Link></li>
+        <li><Link to="/dashboard/myorder">My Orders </Link></li>
       <li><Link to="/dashboard/addreview">Write Review</Link></li>
         </>
       }

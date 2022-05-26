@@ -1,6 +1,6 @@
 # BiCycle Parts 
 
-Live link: [Create React App](https://github.com/facebook/create-react-app).
+Live link: [https://manufacture-store.web.app/](https://manufacture-store.web.app/).
 
 ## Features
 * responsive layout
