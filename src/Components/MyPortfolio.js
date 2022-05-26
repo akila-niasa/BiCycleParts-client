@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../Shared/Footer/Footer';
 
 const MyPortfolio = () => {
     return (
@@ -15,7 +16,7 @@ const MyPortfolio = () => {
     <p><span className='text-xl font-bold'>Institution</span>: National University </p>
     <p><span className='text-xl font-bold'>Subject</span>: Mathmatics </p>
     <div className="card-actions ">
-     <p><span className='text-xl font-bold'>my project</span>: <span><a href="https://wedding-photographer-71122.web.app/">https://wedding-photographer-71122.web.app/</a></span>
+     <p><span className='text-xl font-bold mb-5'>my project</span>: <span><a href="https://wedding-photographer-71122.web.app/">https://wedding-photographer-71122.web.app/</a></span>
      <br />
      <span><a href="https://warehouse-management-2d317.web.app/">https://warehouse-management-2d317.web.app/</a></span>
      <br />
@@ -28,6 +29,7 @@ const MyPortfolio = () => {
             {/* https://phone-seeker-cc2803.netlify.app/ */}
             {/* https://warehouse-management-2d317.web.app/ */}
         </div>
+        <Footer/>
      </div>
     );
 };

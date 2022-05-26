@@ -10,14 +10,14 @@ import Products from './Products/Products';
 const Home = () => {
     return (
         <div>
-            <Banner/>
-               
-      <Products/>
-            <AboutUs/>
-            <Reviews/>
-            <BusinessSummary/>
-            <ContactUs/>
-            <Footer/>
+            <Banner />
+
+            <Products />
+            <AboutUs />
+            <Reviews />
+            <BusinessSummary />
+            <ContactUs />
+            <Footer />
         </div>
     );
 };

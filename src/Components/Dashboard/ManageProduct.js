@@ -9,53 +9,53 @@ const ManageProduct = () => {
     // const [allProduct, setAllProduct] = useState([]);
     const [deletingProduct, setDeletingProduct] = useState(null);
 
-    
 
-    const{data:products,isLoading,refetch}=useQuery('products',()=>fetch('https://fast-spire-01070.herokuapp.com/manageservice',{
+
+    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://fast-spire-01070.herokuapp.com/manageservice', {
         headers: {
-           
-            authorization:`Bearer ${localStorage.getItem('accessToken')}`
+
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
         },
     }
-    
-    ).then(res=>res.json())) 
-    if(isLoading){
-        return <Loading/>
+
+    ).then(res => res.json()))
+    if (isLoading) {
+        return <Loading />
     }
 
-   
+
     return (
         <div>
-             <div>
-            <h2 className="text-2xl">Manage Products: {products.length}</h2>
-            <div className="overflow-x-auto">
-                <table className="table w-full">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Avatar</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            products.map((product,index)=>
-                                <ProductsRow key={index} product={product} index={index} refetch={refetch}
-                                setDeletingProduct={setDeletingProduct}></ProductsRow>
-                            )
-                        }         
-                    </tbody>
-                </table>
+            <div>
+                <h2 className="text-2xl">Manage Products: {products.length}</h2>
+                <div className="overflow-x-auto">
+                    <table className="table w-full">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Avatar</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                products.map((product, index) =>
+                                    <ProductsRow key={index} product={product} index={index} refetch={refetch}
+                                        setDeletingProduct={setDeletingProduct}></ProductsRow>
+                                )
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                {deletingProduct && <DeleteModal
+                    deletingProduct={deletingProduct}
+                    refetch={refetch}
+                    setDeletingProduct={setDeletingProduct}
+                ></DeleteModal>}
             </div>
-            {deletingProduct && <DeleteModal
-                deletingProduct={deletingProduct}
-                refetch={refetch}
-                setDeletingProduct={setDeletingProduct}
-            ></DeleteModal>}
-        </div>
-       
+
         </div>
 
     );

@@ -4,23 +4,23 @@ import toast from 'react-hot-toast';
 const DeleteModal = ({ deletingProduct, refetch, setDeletingProduct }) => {
     const { name, _id } = deletingProduct
     const handleDelete = () => {
-       
-            fetch(`https://fast-spire-01070.herokuapp.com/deleteservice/${_id}`, {
-                method: "DELETE",
-                headers: {
 
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                },
+        fetch(`https://fast-spire-01070.herokuapp.com/deleteservice/${_id}`, {
+            method: "DELETE",
+            headers: {
+
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            },
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount) {
+                    toast.success(`${name} is deleted`)
+                    setDeletingProduct(null);
+                    refetch()
+                }
+
             })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount) {
-                        toast.success(`${name} is deleted`)
-                        setDeletingProduct(null);
-                        refetch()
-                    }
-
-                })
 
 
     }

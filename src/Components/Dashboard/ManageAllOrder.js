@@ -6,80 +6,80 @@ import Loading from '../../Shared/Loading/Loading';
 import StatusUpdate from './StatusUpdate';
 
 const ManageAllOrder = () => {
-    const [orders, setOrders] = useState([]);
-    const[status,setStatus]=useState('')
-    const [updated, setUpdated] = useState(false);
-  
-useEffect(()=>{
-    fetch('https://fast-spire-01070.herokuapp.com/manageorders',{
-        method:"GET",
-        headers:{
-            authorization:`Bearer ${localStorage.getItem('accessToken')}`
-        }
+  const [orders, setOrders] = useState([]);
+  const [status, setStatus] = useState('')
+  const [updated, setUpdated] = useState(false);
+
+  useEffect(() => {
+    fetch('https://fast-spire-01070.herokuapp.com/manageorders', {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+      }
     })
-    .then(res=>res.json())
-    .then(data=>{
+      .then(res => res.json())
+      .then(data => {
         setOrders(data)
         console.log(data);
-    })
-},[updated])
+      })
+  }, [updated])
 
 
-const handleChange=(orderId,status)=>{
- const updatestatus={
-        status:'shipped'
+  const handleChange = (orderId, status) => {
+    const updatestatus = {
+      status: 'shipped'
     }
 
 
-   fetch(`https://fast-spire-01070.herokuapp.com/manageorders/${orderId}`,{
-    method: 'PUT',
-    headers: {
+    fetch(`https://fast-spire-01070.herokuapp.com/manageorders/${orderId}`, {
+      method: 'PUT',
+      headers: {
         'content-type': 'application/json',
         'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-    },
-    body: JSON.stringify(updatestatus)
-}
-  )
-  .then(res=>res.json())
-  .then(data=>{
-    setUpdated(!updated);
-      setStatus('shipped')
-      console.log(data);
-  })
+      },
+      body: JSON.stringify(updatestatus)
+    }
+    )
+      .then(res => res.json())
+      .then(data => {
+        setUpdated(!updated);
+        setStatus('shipped')
+        console.log(data);
+      })
 
-  
-}
 
-    return (
-        <div>
-            <h2 className='mb-2'>
-            <span className='text-xl'>Manage</span> All Orders {orders?.length}
-          </h2>
-          <hr />
-          <div className="overflow-x-auto">
-  <table className="table w-full">
-    {/* <!-- head --> */}
-    <thead>
-      <tr>
-        <th></th>
-        <th>Product</th>
+  }
+
+  return (
+    <div>
+      <h2 className='mb-2'>
+        <span className='text-xl'>Manage</span> All Orders {orders?.length}
+      </h2>
+      <hr />
+      <div className="overflow-x-auto">
+        <table className="table w-full">
+          {/* <!-- head --> */}
+          <thead>
+            <tr>
+              <th></th>
+              <th>Product</th>
               <th>Price</th>
               <th>Customer</th>
               <th>Status</th>
               <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
+            </tr>
+          </thead>
+          <tbody>
             {
               orders?.map(order => (
-                <StatusUpdate key={order._id} order={order}handleChange={handleChange} status={status}updated={updated} setUpdated={setUpdated} ></StatusUpdate>
+                <StatusUpdate key={order._id} order={order} handleChange={handleChange} status={status} updated={updated} setUpdated={setUpdated} ></StatusUpdate>
               ))
-           }
+            }
           </tbody>
-  </table>
-</div>
-        </div>
-    );
+        </table>
+      </div>
+    </div>
+  );
 };
 
 export default ManageAllOrder;
