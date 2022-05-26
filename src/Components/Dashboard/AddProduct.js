@@ -25,7 +25,7 @@ const AddProduct = () => {
                 price:data.price,
                 image:img
             }
-            fetch('http://localhost:5000/addservice',{
+            fetch('https://fast-spire-01070.herokuapp.com/addservice',{
                 method:"POST",
                 headers: {
                     'content-type': 'application/json',

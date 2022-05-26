@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 const AdminRow = ({user,refetch}) => {
     const { email,role } = user;
     const makeAdmin=()=>{
-        fetch(`http://localhost:5000/user/admin/${email}`,{
+        fetch(`https://fast-spire-01070.herokuapp.com/user/admin/${email}`,{
             method:"PUT",
             headers:{
                 authorization:`Bearer ${localStorage.getItem('accessToken')}`
@@ -24,12 +24,13 @@ const AdminRow = ({user,refetch}) => {
            
         })
     }
+    
     return (
         <tr>
         <th></th>
         <td>{email}</td>
-        <td>{role !=='admin'&&<button onClick={makeAdmin} class="btn btn-xs">Make Admin</button>}</td>
-        <td>{role !=='admin' &&<button class="btn btn-xs">X</button>}</td>
+        <td>{role !=='admin'&&<button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
+        <td>{role !=='admin' &&<button className="btn btn-error btn-xs">Delete</button>}</td>
         
     </tr>
     );

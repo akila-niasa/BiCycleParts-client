@@ -9,7 +9,7 @@ const Purchase = () => {
     const{id}=useParams();
     const [product, setProduct] = useState([]);
     const [user] = useAuthState(auth);
-    const { register, handleSubmit, reset } = useForm();
+    // const { register, handleSubmit, reset } = useForm();
 
     const handleBooking=event=>{
         event.preventDefault()
@@ -28,7 +28,7 @@ const Purchase = () => {
             phone: event.target.phone.value,
             status: "pending",
         }
-        fetch('http://localhost:5000/saveorder',{
+        fetch('https://fast-spire-01070.herokuapp.com/saveorder',{
             method:'POST',
             headers:{'content-type':'application/json'},
             body:JSON.stringify(oreder)
@@ -45,7 +45,7 @@ const Purchase = () => {
     }
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/service/${id}`)
+        fetch(`https://fast-spire-01070.herokuapp.com/service/${id}`)
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
@@ -55,77 +55,77 @@ const Purchase = () => {
     return (
         <div>
             <h3 className='fond bold text-2xl text-center m-5'>PurChase <span className='text-secondary'>Your Product</span></h3>
-            <div class="hero min-h-screen ">
+            <div className="hero min-h-screen ">
            
-  <div class="hero-content flex-col lg:flex-row-reverse">
-  <div class="text-center lg:text-left">
-      <div class="text-5xl font-bold">{product?.name}
-      <div class="avatar">
-  <div class="w-8 rounded mx-3">
+  <div className="hero-content flex-col lg:flex-row-reverse">
+  <div className="text-center lg:text-left">
+      <div className="text-5xl font-bold">{product?.name}
+      <div className="avatar">
+  <div className="w-8 rounded mx-3">
     <img src={product?.image} />
   </div>
       </div>
       </div>
       
 
-      <h3 class="card-title">Price:<span className='text-secondary'>{product?.price}</span>(per product)</h3>
-    <h3 class="card-title">Minimum Order:<span className='text-secondary'>{product?.minimumOrder}</span></h3>
-    <h3 class="card-title">Available Quantity:<span className='text-secondary'>{product?.availableQuantity}</span></h3>
+      <h3 className="card-title">Price:<span className='text-secondary'>{product?.price}</span>(per product)</h3>
+    <h3 className="card-title">Minimum Order:<span className='text-secondary'>{product?.minimumOrder}</span></h3>
+    <h3 className="card-title">Available Quantity:<span className='text-secondary'>{product?.availableQuantity}</span></h3>
     
     <small>{product?.details}</small>
      
     </div>
-    <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <div class="card-body">
+    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <div className="card-body">
        <form onSubmit={handleBooking}>
-       <div class="form-control">
-          <label class="label">
-            <span class="label-text">Name</span>
+       <div className="form-control">
+          <label className="label">
+            <span className="label-text">Name</span>
           </label>
-          <input type="text" value={user?.displayName} class="input input-bordered" readOnly/>
+          <input type="text" value={user?.displayName} className="input input-bordered" readOnly/>
         </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Email</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Email</span>
           </label>
-          <input type="text" value={user?.email}  class="input input-bordered" />
+          <input type="text" value={user?.email}  className="input input-bordered" />
          
         </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Product Name</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Product Name</span>
           </label>
          
-          <input type="text" value={product?.name} class="input input-bordered"/>
+          <input type="text" value={product?.name} className="input input-bordered"/>
          
         </div>
-        <div class="form-control">
-          <label class="label" for='quantity'>
-            <span class="label-text">Quantity</span>
+        <div className="form-control">
+          <label className="label" for='quantity'>
+            <span className="label-text">Quantity</span>
           </label>
           {/* <input type="hidden" name="amount" value={product?.minimumOrder}/> */}
         
-              <input type="number" id='quantity' name="quantity"  min={product?.minimumOrder} max={product?.availableQuantity}   class="input input-bordered" 
+              <input type="number" id='quantity' name="quantity"  min={product?.minimumOrder} max={product?.availableQuantity}   className="input input-bordered" 
               />
         
       
          
         </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Phone Number</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Phone Number</span>
           </label>
-          <input type="text" name="phone"  placeholder='phone' class="input input-bordered" />
+          <input type="text" name="phone"  placeholder='phone' className="input input-bordered" />
          
         </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Address</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Address</span>
           </label>
-          <input type="text" placeholder='address' class="input input-bordered" />
+          <input type="text" placeholder='address' className="input input-bordered" />
          
         </div>
-        <div class="form-control mt-6">
+        <div className="form-control mt-6">
         {
             <input type="submit" value="Purchase" className="btn btn-secondary w-full max-w-xs" />
         }

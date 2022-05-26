@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 import Loading from '../../Shared/Loading/Loading';
@@ -10,7 +11,7 @@ const ManageAllOrder = () => {
     const [updated, setUpdated] = useState(false);
   
 useEffect(()=>{
-    fetch('http://localhost:5000/manageorders',{
+    fetch('https://fast-spire-01070.herokuapp.com/manageorders',{
         method:"GET",
         headers:{
             authorization:`Bearer ${localStorage.getItem('accessToken')}`
@@ -30,20 +31,23 @@ const handleChange=(orderId,status)=>{
     }
 
 
-   fetch(`http://localhost:5000/manageorders/${orderId}`,{
+   fetch(`https://fast-spire-01070.herokuapp.com/manageorders/${orderId}`,{
     method: 'PUT',
     headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
     },
     body: JSON.stringify(updatestatus)
 }
   )
   .then(res=>res.json())
   .then(data=>{
-    setUpdated(true);
+    setUpdated(!updated);
       setStatus('shipped')
       console.log(data);
   })
+
+  
 }
 
     return (
@@ -52,8 +56,8 @@ const handleChange=(orderId,status)=>{
             <span className='text-xl'>Manage</span> All Orders {orders?.length}
           </h2>
           <hr />
-          <div class="overflow-x-auto">
-  <table class="table w-full">
+          <div className="overflow-x-auto">
+  <table className="table w-full">
     {/* <!-- head --> */}
     <thead>
       <tr>
@@ -68,7 +72,7 @@ const handleChange=(orderId,status)=>{
     <tbody>
             {
               orders?.map(order => (
-                <StatusUpdate key={order._id} order={order}handleChange={handleChange} status={status}updated={updated} setUpdated={setUpdated}></StatusUpdate>
+                <StatusUpdate key={order._id} order={order}handleChange={handleChange} status={status}updated={updated} setUpdated={setUpdated} ></StatusUpdate>
               ))
            }
           </tbody>

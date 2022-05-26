@@ -11,7 +11,7 @@ const MyOrder = () => {
     const [myOrders, setMyOrders] = useState([]);
     useEffect(()=>{
         if(user){
-            fetch(`http://localhost:5000/orders?email=${user.email}`,{
+            fetch(`https://fast-spire-01070.herokuapp.com/orders?email=${user.email}`,{
               method:"GET",
               headers:{
                   'authorization':`Bearer ${localStorage.getItem('accessToken')}`
@@ -37,7 +37,7 @@ const MyOrder = () => {
     const orderDelete=id=>{
         const processed = window.confirm("Do you want to delete the product?")
         if(processed){
-            fetch(`http://localhost:5000/deleteorder/${id}`,{
+            fetch(`https://fast-spire-01070.herokuapp.com/deleteorder/${id}`,{
                 method:"DELETE"
             })
             .then(res=>res.json())
@@ -59,8 +59,8 @@ const MyOrder = () => {
                 </h2>
                 <hr />
             </div>
-            <div class="overflow-x-auto">
-                <table class="table table-zebra w-full">
+            <div className="overflow-x-auto">
+                <table className="table table-zebra w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>

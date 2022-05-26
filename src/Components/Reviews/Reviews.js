@@ -8,7 +8,7 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(()=>{
-    fetch('http://localhost:5000/review')
+    fetch('https://fast-spire-01070.herokuapp.com/review')
     .then(res=>res.json())
     .then(data=>{
       console.log(data);
@@ -21,14 +21,14 @@ const Reviews = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
         {
            reviews.map((review,index)=>(
-            <div key={index} class="card w-96 bg-accent text-primary-content">
-            <div class="card-body">
-              <h2 class="card-title">{review?.reviewData.username}</h2>
+            <div key={index} className="card w-96 bg-accent text-primary-content">
+            <div className="card-body">
+              <h2 className="card-title">{review?.reviewData.username}</h2>
               <p>Rating: {review?.reviewData.rating}/5</p>
               <p>Review: {review?.reviewData.review}</p>
               
                     
-              <div class="card-actions justify-end">
+              <div className="card-actions justify-end">
                 
               </div>
             </div>

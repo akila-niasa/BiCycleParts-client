@@ -102,8 +102,14 @@ const Login = () => {
                             })}
                           
                         />
+                        
                         <label className=''>
-                           
+                         {errors.password?.type === 'required' && 
+                         <span  className="label-text-alt text-red-500">{errors.password.message}</span>
+                         }
+                         {errors.password?.type === 'pattern' && 
+                         <span  className="label-text-alt text-red-500">{errors.password.message}</span>
+                         }
                         </label>
                         
                     </div>

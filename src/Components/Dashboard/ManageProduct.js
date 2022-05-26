@@ -11,7 +11,7 @@ const ManageProduct = () => {
 
     
 
-    const{data:products,isLoading,refetch}=useQuery('products',()=>fetch('http://localhost:5000/manageservice',{
+    const{data:products,isLoading,refetch}=useQuery('products',()=>fetch('https://fast-spire-01070.herokuapp.com/manageservice',{
         headers: {
            
             authorization:`Bearer ${localStorage.getItem('accessToken')}`
@@ -28,8 +28,8 @@ const ManageProduct = () => {
         <div>
              <div>
             <h2 className="text-2xl">Manage Products: {products.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>

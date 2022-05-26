@@ -4,9 +4,8 @@ import toast from 'react-hot-toast';
 const DeleteModal = ({ deletingProduct, refetch, setDeletingProduct }) => {
     const { name, _id } = deletingProduct
     const handleDelete = () => {
-        const processed = window.confirm("are you want to delete")
-        if (processed) {
-            fetch(`http://localhost:5000/deleteservice/${_id}`, {
+       
+            fetch(`https://fast-spire-01070.herokuapp.com/deleteservice/${_id}`, {
                 method: "DELETE",
                 headers: {
 
@@ -22,19 +21,19 @@ const DeleteModal = ({ deletingProduct, refetch, setDeletingProduct }) => {
                     }
 
                 })
-        }
+
 
     }
     return (
         <div>
-            <input type="checkbox" id="delete-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg ">Are you sure you want to delete  this {name}!</h3>
-                    <p class="py-4">when you sure about that click <span className='text-red-500'>DELETE</span> button</p>
-                    <div class="modal-action">
-                        <button onClick={() => handleDelete()} class="btn btn-xs btn-error">Delete</button>
-                        <label for="delete-modal" class="btn btn-xs">Cancel</label>
+            <input type="checkbox" id="delete-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg ">Are you sure you want to delete  this {name}!</h3>
+                    <p className="py-4">when you sure about that click <span className='text-red-500'>DELETE</span> button</p>
+                    <div className="modal-action">
+                        <button onClick={() => handleDelete()} className="btn btn-xs btn-error">Delete</button>
+                        <label for="delete-modal" className="btn btn-xs">Cancel</label>
                     </div>
                 </div>
             </div>

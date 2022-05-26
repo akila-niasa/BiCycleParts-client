@@ -16,7 +16,7 @@ const MyProfile = () => {
             location:data.location,
             phone:data.phone
           };
-          fetch(`http://localhost:5000/user/${user.email}`,{
+          fetch(`https://fast-spire-01070.herokuapp.com/userprofile/${user?.email}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -38,27 +38,27 @@ const MyProfile = () => {
         <h1 className='text-center font-bold my-3'>
           My <span className='text-secondary'>ProFile</span>
         </h1>
-        <div class="hero min-h-screen bg-base-200">
-<div class="hero-content ">
+        <div className="hero min-h-screen bg-base-200">
+<div className="hero-content ">
 
-<div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-  <div class="card-body">
+<div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+  <div className="card-body">
 <form onSubmit={handleSubmit(onSubmit)}>
-<div class="form-control">
-      <label class="label">
-        <span class="label-text">Name</span>
+<div className="form-control">
+      <label className="label">
+        <span className="label-text">Name</span>
       </label>
-      <input value={user?.displayName} class="input input-bordered" />
+      <input value={user?.displayName} className="input input-bordered" />
     </div>
-<div class="form-control">
-      <label class="label">
-        <span class="label-text">Email</span>
+<div className="form-control">
+      <label className="label">
+        <span className="label-text">Email</span>
       </label>
-      <input  value={user?.email} class="input input-bordered" />
+      <input  value={user?.email} className="input input-bordered" />
     </div>
-<div class="form-control">
-      <label class="label">
-        <span class="label-text">Education</span>
+<div className="form-control">
+      <label className="label">
+        <span className="label-text">Education</span>
       </label>
       <input  type='text'
                 {...register("education", {
@@ -66,29 +66,29 @@ const MyProfile = () => {
                   
                 })}
             
-                placeholder='education' class="input input-bordered" />
+                placeholder='education' className="input input-bordered" />
     </div>
-<div class="form-control">
-      <label class="label">
-        <span class="label-text">Location</span>
+<div className="form-control">
+      <label className="label">
+        <span className="label-text">Location</span>
       </label>
       <input  type='text'
                 {...register("location", {
                   required: true,
                 })}
             
-                placeholder='location' class="input input-bordered" />
+                placeholder='location' className="input input-bordered" />
     </div>
     
-    <div class="form-control">
-      <label class="label">
-        <span class="label-text">Phone Number</span>
+    <div className="form-control">
+      <label className="label">
+        <span className="label-text">Phone Number</span>
       </label>
       <input type="text"  {...register("phone", { required: true })}
-                placeholder='number' class="input input-bordered"/>
+                placeholder='number' className="input input-bordered"/>
      
     </div>
-    <div class="form-control mt-6">
+    <div className="form-control mt-6">
     <input className='btn btn-secondary p-6 w-full max-w-xs text-white' type="submit" value="Review" />
     </div>
 </form>

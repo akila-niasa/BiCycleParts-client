@@ -4,21 +4,21 @@ const ContactUs = () => {
     return (
         <div>
             <h2 className='p-10 text-center text-4xl font-bold font-serif'><span className='text-secondary '>Contact </span>Us</h2>
-            <div class="card w-full bg-base-100 shadow-xl image-full">
+            <div className="card w-full bg-base-100 shadow-xl image-full">
   <figure><img src="https://i.ibb.co/gvW1n0C/images-5.png" alt="" /></figure>
   
-  <div class="card-body justify-center items-center">
+  <div className="card-body justify-center items-center">
         <div >
-          <label class="label">
-            <span class="label-text">Email</span>
+          <label className="label">
+            <span className="label-text">Email</span>
           </label>
-          <input type="text" placeholder="email" class="input input-bordered w-96" />
+          <input type="text" placeholder="email" className="input input-bordered w-96" />
         </div>
         <div>
-          <label class="label">
-            <span class="label-text">Message</span>
+          <label className="label">
+            <span className="label-text">Message</span>
           </label>
-          <textarea type="text" placeholder="message" class="input input-bordered w-96 h-5/6" />
+          <textarea type="text" placeholder="message" className="input input-bordered w-96 h-5/6" />
         </div>
      <div>
      <button className='btn btn-banner  m-5'  type="submit">
